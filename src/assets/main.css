@@ -32,10 +32,11 @@ top {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 175px;
 }
 
 up {
-    height: 50px;
+    height: 10px;
 }
 
 header {
