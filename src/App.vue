@@ -4,13 +4,13 @@
       <button @click="handleMenuClick('Todos')">Todos</button>
       <button @click="handleMenuClick('Post')">Post</button>
     </div>
-
+    
     <div>
       <!-- Menampilkan komponen Todos jika menu Todos dipilih -->
-      <Todos v-if="selectionMenu === 'Todos'" />
+      <Todos v-if="selectionMenu === 'Todos'" :title="todosTitle" />
 
       <!-- Menampilkan komponen Post jika menu Post dipilih -->
-      <Post v-if="selectionMenu === 'Post'" />
+      <Post v-if="selectionMenu === 'Post'" :title="postTitle" />
 
       <!-- Pesan ketika tidak ada menu yang dipilih -->
       <p v-if="!selectionMenu">Pilih Salah Satu Menu</p>
@@ -24,6 +24,8 @@ import Todos from './components/Todos.vue';
 import Post from './components/Post.vue';
 
 const selectionMenu = ref('');
+const todosTitle = 'DAFTAR KEGIATAN'; 
+const postTitle = 'Post'; 
 
 const handleMenuClick = (menu) => {
   selectionMenu.value = menu;
