@@ -3,7 +3,7 @@
   <top>
     <div>
       <div style="margin-left: 60px;">
-        <h2>{{ title }}</h2>
+        <h2>Post</h2>
         <select v-model="selectedUser" @change="fetchPosts" class="select-user">
           <option value="">Select User</option>
           <option v-for="user in users" :key="user.id" :value="user.id">{{ user.name }}</option>

@@ -1,34 +1,21 @@
 <template>
   <div class="container">
     <div class="button-container">
-      <button @click="handleMenuClick('Todos')">Todos</button>
-      <button @click="handleMenuClick('Post')">Post</button>
+      <button @click="navigateTo('/todos')">Todos</button>
+      <button @click="navigateTo('/posts')">Post</button>
+      <button @click="navigateTo('/albums')">Albums</button>
     </div>
-    
-    <div>
-      <!-- Menampilkan komponen Todos jika menu Todos dipilih -->
-      <Todos v-if="selectionMenu === 'Todos'" :title="todosTitle" />
-
-      <!-- Menampilkan komponen Post jika menu Post dipilih -->
-      <Post v-if="selectionMenu === 'Post'" :title="postTitle" />
-
-      <!-- Pesan ketika tidak ada menu yang dipilih -->
-      <p v-if="!selectionMenu">Pilih Salah Satu Menu</p>
-    </div>
+    <router-view />   
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import Todos from './components/Todos.vue';
-import Post from './components/Post.vue';
+import { useRouter } from 'vue-router';
 
-const selectionMenu = ref('');
-const todosTitle = 'DAFTAR KEGIATAN'; 
-const postTitle = 'Post'; 
+const router = useRouter();
 
-const handleMenuClick = (menu) => {
-  selectionMenu.value = menu;
+const navigateTo = (path) => {
+  router.push(path);
 };
 </script>
 

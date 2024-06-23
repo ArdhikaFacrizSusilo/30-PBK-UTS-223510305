@@ -2,7 +2,7 @@
 <template>
   <div>
     <header>
-      <h1>{{ title }}</h1>
+      <h1>DAFTAR KEGIATAN</h1>
       <div id="todoStatus">
         <div id="totalComp">
           <span id="totalCompleted" class="countData">{{ completedTodoNum }}</span><span class="countName">Comp.</span>
